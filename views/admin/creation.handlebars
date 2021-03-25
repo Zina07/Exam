@@ -1,0 +1,125 @@
+<head>
+  <link rel="stylsheet" href="../../public/css/creation.css">
+</head>
+
+
+<div >
+  <div>
+    <h1 class="titreCreation">{{title}}</h1>
+  </div>
+  <div class="col">
+    <a href="/" class="btn btn-outline-primary boutonRetour">
+      RETOUR SUR LE SITE
+    </a>
+  </div>
+</div>
+</div>
+
+
+<div class="container sous-titre">
+  <div class="row justify-content-around mb-3">
+    <svg class="diagonale" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 800">
+    <path fill="#72adf0b4" fill-opacity="1" d="M0,100L1440,400L1440,800L0,800Z"></path>
+  </svg>
+    <div class="col">
+    </div>
+    <div class="col">
+    </div>
+  </div>
+</div>
+<div>
+      <div class="titre">
+      <h3> Créer un article</h3>
+    </div>
+</div>
+
+
+
+<div class="container creation">
+  <form enctype='multipart/form-data' action='/admin/creation' method='POST'>
+    <div class="row justify-content-center mb-3">
+      <div class="col-4">
+        <input type="text" placeholder="Titre de l'article" name="titre" value="Titre de l'article" />
+      </div>
+      <div class="col-4">
+        <input type="text" placeholder="Description" name="description" value="Description" />
+      </div>
+    </div>
+
+</div>
+
+<div class="row creation-elements justify-content-center mb-5">
+  <div class="col-4 ml-5">
+    <input type="file" name='image' />
+  </div>
+  <div class="col-4">
+    <label for="type-select">Choisir un type:</label>
+    <select name="type" id="type-select">
+      <option value="publication">Publication</option>
+      <option value="portrait">Portrait</option>
+      <option value="association">Association</option>
+    </select>
+  </div>
+</div>
+
+
+<div class="container wysiwyg">
+  
+  <div class="row">
+    <div class="col">
+    </div>
+    <div class="col">
+      <textarea class="editor" id="content" name="texte">Écrire votre article...</textarea>
+
+      <script src="https://cdn.tiny.cloud/1/n268b6up9mbq4dpqsrnu7p6mkazxczwuxvatwgb64uvvnrr1/tinymce/5/tinymce.min.js"
+        referrerpolicy="origin">
+        </script>
+      <script type="text/javascript">
+        tinymce.init({
+          selector: '#content',
+          width: 700,
+          height: 300,
+          plugins: [
+            'advlist autolink link image lists charmap print preview hr anchor pagebreak',
+            'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
+            'table emoticons template paste help'
+          ],
+          toolbar: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | ' +
+            'bullist numlist outdent indent | link image | print preview media fullpage | ' +
+            'forecolor backcolor emoticons | help',
+          menu: {
+            favs: { title: 'My Favorites', items: 'code visualaid | searchreplace | emoticons' }
+          },
+          menubar: 'favs file edit view insert format tools table help',
+          content_css: [
+            '//fast.fonts.net/cssapi/e6dc9b99-64fe-4292-ad98-6974f93cd2a2.css',
+            '//www.tinymce.com/css/codepen.min.css'
+          ]
+        });
+      </script>
+    </div>
+    <div class="col">
+    </div>
+  </div>
+</div>
+
+
+<div class="container creation-btn-publier">
+
+  <div class="row">
+    <div class="col mt-2">
+      <button type="submit" class="btn btn-primary btn-lg">PUBLIER</button>
+    </div>
+  </div>
+</div>
+
+
+<!--  insérer un champs pour catégoriser et associer couleur au thème-->
+<!--<input type="color" name="Color" value="Couleur" />
+    <input type="file" name='image' />
+    <input type="file" name='multimédia' />-->
+
+
+<!-- WYSIWYG -->
+
+</form>
