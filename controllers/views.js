@@ -23,7 +23,7 @@ router.get('/admin/creation', (req, res, next) => {
 })
 
 
-// route protégé par authorization par session
+// route protégé par authorisation par session
 //router.get('/admin/liste', (req, res, next) => {
 // La méthode isAuthenticated est fournie par passport,
 // elle aura une valeur de true si la session est active
